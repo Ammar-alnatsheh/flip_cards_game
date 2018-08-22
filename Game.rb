@@ -1,6 +1,7 @@
 require_relative "Board.rb"
 require_relative "card.rb"
 require_relative "HumanPlayer.rb"
+require_relative "ComputerPlayer.rb"
 
 
 class Game
