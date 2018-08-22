@@ -7,9 +7,13 @@ class ComputerPlayer
       while i < (Math.sqrt(num_of_cards).to_i)+1
         j =0
         while j < (Math.sqrt(num_of_cards).to_i)+1
+          if counter < num_of_cards
           @grid[i][j] = 0
+        else
+          @grid[i][j] = 1
+        end
           counter += 1
-          return if counter == num_of_cards
+
           j+=1
         end
         i+=1
@@ -19,11 +23,11 @@ class ComputerPlayer
   end
 
   def make_guess()
-    row = rand(0..@grid.length)
-    col = rand(0..@grid[0].length)
+    row = rand(0...@grid.length)
+    col = rand(0...@grid[0].length)
       while @grid[row][col] != 0
-        row = rand(0..@grid.length)
-        col = rand(0..@grid[0].length)
+        row = rand(0...@grid.length)
+        col = rand(0...@grid[0].length)
       end
     if @previous_guess = nil
       @previous_guess = [row,col]
