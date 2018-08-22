@@ -39,8 +39,11 @@ class ComputerPlayer
 
 
   def matching_result(previous_card,previous_guess,second_card,second_guess)
-      @grid[previous_guess[0]][previous_guess[1]] = previous_card
-      @grid[second_guess[0]][second_guess[1]] = second_card
+
+      if previous_card == second_card
+        @grid[second_guess[0]][second_guess[1]] = 1
+        @grid[previous_guess[0]][previous_guess[1]] = 1
+      end
 
   end
 
